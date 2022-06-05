@@ -92,14 +92,14 @@ Ta có thể chạy một vòng lặp để so sánh các phần tử cạnh nha
 2. Nếu phần tử hiện tại A[i] nhỏ hơn phần tử trước A[i-1] ta sẽ hoán đổi phần tử hiện tại A[i] và A[i-1].
 
 ```c
-if (i > 0 && A[i-1] > A[i])
+if (i != 0 && A[i-1] > A[i])
     swap(A[i], A[i-1])
 ```
 
 3. Nếu phần tử hiện tại A[i] nhỏ hơn phần tử kế tiếp A[i+1], ta sẽ hoán đổi phần tử hiện tại A[i] với A[i+1].
 
 ```c
-if (i > 0 && A[i] < A[i+1])
+if (i != n-1 && A[i] < A[i+1])
     swap(A[i], A[i+1])
 ```
 
@@ -108,9 +108,9 @@ if (i > 0 && A[i] < A[i+1])
 ```c
 void waveForm(int A[], int n) {
     for (int i = 0; i < n; i = i+2) {
-        if (i > 0 && A[i-1] > A[i])
+        if (i != 0 && A[i-1] > A[i])
             swap(A[i], A[i-1])
-        if (i > 0 && A[i] < A[i+1])
+        if (i != n-1 && A[i] < A[i+1])
             swap(A[i], A[i+1])
     }
 }
